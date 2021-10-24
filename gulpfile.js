@@ -105,36 +105,6 @@ gulp.task('scripts', function () {
 // работа с графикой
 gulp.task("images", function () {
   return gulp.src(paths.images.src)
-    // .pipe(imagemin([
-    //   imageminGiflossy({
-    //     optimizationLevel: 3,
-    //     optimize: 3,
-    //     lossy: 2
-    //   }),
-    //   imageminPngquant({
-    //     speed: 5,
-    //     quality: [0.6, 0.8]
-    //   }),
-    //   imageminZopfli({
-    //     more: true
-    //   }),
-    //   imageminMozjpeg({
-    //     progressive: true,
-    //     quality: 80
-    //   }),
-    //   imagemin.svgo({
-    //     plugins: [
-    //       { removeViewBox: false },
-    //       { removeUnusedNS: false },
-    //       { removeUselessStrokeAndFill: false },
-    //       { cleanupIDs: false },
-    //       { removeComments: true },
-    //       { removeEmptyAttrs: true },
-    //       { removeEmptyText: true },
-    //       { collapseGroups: true }
-    //     ]
-    //   })
-    // ]))
     .pipe(gulp.dest(paths.images.dest))
 })
 
@@ -153,10 +123,17 @@ gulp.task('watch', function () {
 })
 
 // запуск задач Gulp по умолчанию
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
   'clean',
   gulp.parallel('pug', 'scss', 'scripts', 'images', 'copy:fonts'),
   gulp.parallel('watch', 'server')
+)
+)
+
+// собрать для продакшена
+gulp.task('production', gulp.series(
+  'clean',
+  gulp.parallel('pug', 'scss', 'scripts', 'images', 'copy:fonts'),
 )
 )
 
