@@ -1,0 +1,207 @@
+.cats {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+.cat {
+  position: relative;
+  background-color: $light-gray;
+  color: #000;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  &__img img {
+    max-width: 100%;
+  }
+  &__discount,
+  &__like {
+    position: absolute;
+    top: 30px;
+  }
+  &__discount {
+    left: 30px;
+  }
+  &__like {
+    right: 30px;
+  }
+  &__discount {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $red;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  &__like {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    #like {
+      transition: all 0.2s ease-in-out;
+
+      &.liked {
+        color: $red;
+      }
+    }
+
+    &:hover svg #like {
+      fill: $red;
+    }
+  }
+  &__img {
+    max-width: 100%;
+  }
+  &__name,
+  &__price {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 700;
+  }
+  &__content {
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  &__descr {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 25px 0;
+  }
+  &__color,
+  &__age,
+  &__legs {
+    margin-right: 35px;
+    font-size: 12px;
+    line-height: 15px;
+
+    > span {
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+  }
+  &__legs {
+    margin-right: 0;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  /**/
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .cats {
+    &__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+  }
+  .cat {
+    &__content {
+      padding: 20px;
+    }
+    &__descr {
+      margin: 15px 0;
+    }
+    &__name,
+    &__price {
+      font-size: 20px;
+    }
+    &__color,
+    &__age,
+    &__legs {
+      margin-right: 25px;
+      font-size: 11px;
+      line-height: 15px;
+
+      > span {
+        font-size: 13px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+    }
+    &__legs {
+      padding: 0;
+      margin-right: 0;
+    }
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  /**/
+}
+@media only screen and (max-width: 651px) {
+  .cat {
+    &__discount {
+      padding: 5px 10px;
+    }
+    &__like svg {
+      width: 28px;
+      height: 28px;
+    }
+    &__color,
+    &__age,
+    &__legs {
+      margin-right: 35px;
+      margin-bottom: 15px;
+
+      > span {
+        font-size: 16px;
+      }
+    }
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .cats {
+    &__list {
+      width: 90%;
+      grid-template-columns: 1fr;
+    }
+  }
+  .cat {
+    &__discount {
+      top: 20px;
+      left: 20px;
+    }
+    &__like {
+      top: 20px;
+      right: 20px;
+    }
+    &__color,
+    &__age,
+    &__legs {
+      margin-bottom: 10px;
+
+      > span {
+        font-size: 14px;
+      }
+    }
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .cats {
+    &__list {
+      // width: 90%;
+      grid-template-columns: 1fr;
+    }
+  }
+}

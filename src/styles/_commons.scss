@@ -1,0 +1,174 @@
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+  user-select: none;
+  overflow-y: auto;
+}
+.container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.footer-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.btn {
+  font-family: $default-font;
+  background-color: $accent;
+  border: none;
+  border-radius: $border-radius;
+  outline: none;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: rgba($accent, 0.8);
+    color: #fff;
+  }
+}
+.btn--buy,
+.btn--soldout {
+  width: 100%;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  padding: 20px 55px;
+}
+.btn--soldout {
+  background-color: $black;
+  color: #fff;
+  cursor: no-drop;
+
+  &:hover {
+    background-color: $black;
+    color: #fff;
+  }
+}
+.btn--subscribe {
+  padding: 25px 75px;
+  color: #fff;
+}
+.btn--more {
+  margin: 65px auto;
+  padding: 25px 130px;
+  background-color: none;
+  border: 1px solid $gray;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 17px;
+
+  &:hover {
+    color: $light-gray;
+    background-color: $black;
+  }
+}
+.btn--up {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  bottom: 150px;
+  right: 35px;
+  padding: 19px;
+  border-radius: 0;
+  border: 1px solid $accent;
+  transition: none;
+
+  &:hover {
+    background-color: #fff;
+    border: 1px solid $accent;
+    svg path {
+      fill: $accent;
+    }
+  }
+}
+.discount {
+  padding: 10px 20px;
+  border-radius: $border-radius;
+  background-color: $red;
+  font-size: 16px;
+}
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 90%;
+  }
+  .footer-container {
+    width: 100%;
+  }
+  .btn--subscribe {
+    padding: 21px 50px;
+  }
+}
+/* Medium Devices, Desktops */
+@media only screen and (max-width: 992px) {
+  .container {
+    max-width: 95%;
+  }
+  .footer-container {
+    width: 100%;
+  }
+  .btn--subscribe {
+    padding: 15px 50px;
+  }
+}
+/* Small Devices, Tablets */
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+  }
+  .footer-container {
+    width: 100%;
+  }
+}
+/* Extra Small Devices, Phones */
+@media only screen and (max-width: 480px) {
+  .container {
+    max-width: 90%;
+  }
+  .footer-container {
+    width: 100%;
+  }
+  .btn--more {
+    margin: 40px auto;
+    padding: 10px 92px;
+    font-size: 12px;
+  }
+  .btn--up {
+    bottom: 60px;
+    right: 15px;
+  }
+}
+/* Custom, iPhone Retina */
+@media only screen and (max-width: 320px) {
+  .container {
+    max-width: 90%;
+  }
+  .footer-container {
+    width: 100%;
+  }
+  .btn--more {
+    margin: 40px auto;
+    padding: 10px 80px;
+    font-size: 12px;
+  }
+  .btn--subscribe {
+    width: 90%;
+    padding: 10px;
+    color: #fff;
+  }
+  .btn--up {
+    bottom: 50px;
+    right: 15px;
+  }
+}
